@@ -1,24 +1,24 @@
 <template>
-  <div id="app">
-    <home/>
-  </div>
+  <v-app>
+    <v-main>
+      
+      <myHome/>
+    </v-main>
+  </v-app>
 </template>
 
 <script>
-import home from './components/home.vue'
+import myHome from './components/myHome.vue';
 
 export default {
   name: 'App',
-  components: {
-    home
-  }
-}
-</script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-</style>
+  components: {
+    myHome,
+  },
+
+  data: () => ({
+    //
+  }),
+};
+</script>
