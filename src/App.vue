@@ -1,24 +1,31 @@
 <template>
   <v-app>
     <v-main>
-      
-      <myHome/>
+      <router-view/>
     </v-main>
   </v-app>
+    
 </template>
 
-<script>
-import myHome from './components/myHome.vue';
+<style lang="scss">
+// #app {./components/Navbar.vue
+//   font-family: Avenir, Helvetica, Arial, sans-serif;
+//   -webkit-font-smoothing: antialiased;
+//   -moz-osx-font-smoothing: grayscale;
+//   text-align: center;
+//   color: #2c3e50;
+// }
 
-export default {
-  name: 'App',
+// #nav {
+//   padding: 30px;
 
-  components: {
-    myHome,
-  },
+//   a {
+//     font-weight: bold;
+//     color: #2c3e50;
 
-  data: () => ({
-    //
-  }),
-};
-</script>
+//     &.router-link-exact-active {
+//       color: #42b983;
+//     }
+//   }
+// }
+</style>
