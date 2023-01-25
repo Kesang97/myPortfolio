@@ -1,37 +1,62 @@
 <template>
- <section>
-    <v-app-bar color="black lighten-4" app flat dark>
-      <v-container>
-        <v-row>
-          <v-col cols="6">
-            <div class="d-flex justify-start">
-              <div class="text-h6">Portfolio</div>
-            </div>
-          </v-col>
-          <v-col cols="6">
-            <div class="d-flex justify-center">
-              <v-btn text class="grey">
-                <v-icon left size="30" color="green darken-1">mdi-folder</v-icon>
-                <div class="subtitle-2 text-lowercase">kesangs@gmail.com</div>
-              </v-btn>
-              <v-chip text class="grey ml-4 my-auto">
-                <v-icon left size="20" color="green darken-1">mdi-phone</v-icon>
-                <div class="subtitle-2 text-lowercase">+91 8345086681</div>
-              </v-chip>
-            </div>
-            
-          </v-col>
-        </v-row>
-      </v-container>
+ <nav>
+    <v-app-bar app flat dark>
+      <v-app-bar-nav-icon 
+        class="grey--text"
+        @click="drawer= !drawer">
+      </v-app-bar-nav-icon>
+      <v-toolbar-title class="grey--text">
+          <span class="text-h6">Portfolio</span>
+      </v-toolbar-title>
+     <v-spacer></v-spacer>
+    
+      <v-btn text>
+        <v-icon left size="20" color="green darken-1">mdi-folder</v-icon>
+        <div class="text-caption text-lowercase">kesangs99@gmail.com</div>
+      </v-btn>
+      <v-btn text>
+        <v-icon left size="20" color="green darken-1">mdi-phone</v-icon>
+        <div class="text-caption text-lowercase">+91 7477308037</div>
+      </v-btn>
+  
     </v-app-bar>
- </section>
+
+    <v-navigation-drawer v-model="drawer" app class="grey lighten-2">
+      <v-list>
+        <v-list-item-group v-model="selectItem">
+          <v-list-item v-for="(item, i) in assets" :key="i" @click="$router.push(item.route)">
+            <v-list-item-actions>
+              <v-icon left size="25" color="deep-orange">{{ item.icon }}</v-icon>
+            </v-list-item-actions>
+            <v-list-item-content>
+              <v-list-item-title class="white--text">{{ item.title }}</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </v-list-item-group>
+      </v-list>
+    </v-navigation-drawer>
+  </nav>
 </template>
 
 <script>
 
   export default {
-    data: () => ({
+    data () {
+      return{
+        drawer: false,
+        selectItem: 0,
+
+        assets: [
+          {
+            icon:'mdi-home-account', title: 'Home', route: '/'
+          },
+          {
+            icon:'mdi-application-edit-outline', title: 'About', route: '/about'
+          },
+        ]
+      }
+    }
      
-  })
+  
 };
 </script>
