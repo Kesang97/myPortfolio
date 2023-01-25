@@ -27,19 +27,17 @@
     </v-container>
     <v-container class="mt-5">
       <v-row>
-        <v-col cols="12" md="6">
-          <v-container>
+        <v-col cols="12" md="6" sm="12" lg="6">
             <div class="d-flex d-md-flex justify-center justify-md-start">
             <v-card class="rounded-0" outlined color="grey lighten-2">
               <v-img src="../assets/contact-img.png" contain height="400px" width="500px" class="hidden-md-and-down">
               </v-img>
             </v-card>
           </div>
-          </v-container>
         </v-col>
-        <v-col cols="12" md="6">
-          <v-container class="my-auto">
-            <div class="text-h3 font-weight-bold">Get in touch today to schedule your call</div>
+        <v-col cols="12" md="6" sm="12" lg="6">
+          <div class="my-auto">
+            <div class="text-h3 font-weight-bold text-justify">Get in touch today to schedule your call</div>
             <div class="d-flex mt-2">
               <v-btn text>
                 <v-icon left size="18" color="black">mdi-email</v-icon>
@@ -65,7 +63,7 @@
                 label="E-mail"
                 required
               ></v-text-field>
-              
+
               <v-textarea
                 name="input-7-1"
                 label="Message"
@@ -74,12 +72,12 @@
               >
               </v-textarea>
             
-            <v-btn @click="submit" class="text-lowercase" rounded color="black lighten-1" dark>
+            <v-btn @click="submit" depressed class="text-lowercase" rounded color="black lighten-1" dark>
               Submit
             </v-btn>
             </form>
             
-          </v-container>
+          </div>
         </v-col>
       </v-row>
     </v-container>

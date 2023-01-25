@@ -9,15 +9,28 @@
           <span class="text-h6">Portfolio</span>
       </v-toolbar-title>
      <v-spacer></v-spacer>
-    
-      <v-btn text>
+    <div class="d-flex justify-space-between ">
+      <v-btn text class="hidden-md-and-down">
         <v-icon left size="20" color="green darken-1">mdi-folder</v-icon>
         <div class="text-caption text-lowercase">kesangs99@gmail.com</div>
       </v-btn>
-      <v-btn text>
+      <v-btn text class="hidden-md-and-down">
         <v-icon left size="20" color="green darken-1">mdi-phone</v-icon>
         <div class="text-caption text-lowercase">+91 7477308037</div>
       </v-btn>
+    </div>
+   
+    <!-- <div class="d-flex justify-center">
+      <v-btn text class="hidden-md-and-up">
+        <v-icon left size="20" color="green darken-1">mdi-folder</v-icon>
+        <div class="text-caption text-lowercase">kesangs99@gmail.com</div>
+      </v-btn>
+      <v-btn text class="hidden-md-and-up">
+        <v-icon left size="20" color="green darken-1">mdi-phone</v-icon>
+        <div class="text-caption text-lowercase">+91 7477308037</div>
+      </v-btn>
+    </div> -->
+  
   
     </v-app-bar>
 
