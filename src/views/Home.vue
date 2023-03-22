@@ -4,14 +4,14 @@
       <v-row>
         <v-col cols="12" md="6">
           <div class="d-flex d-md-flex justify-md-start justify-center mb-2">
-            <div class="text-h3">I m a Creative Graphic and Web Designer</div>
+            <div class="text-h4 text-md-h3">Hey! i m Kelzang Sherpa</div>
           </div>
-          <div class="text-left mb-4">
-            <div class="subtitle-2">
-              A Junior FrontEnd Developer Currently Working for Two Wheeler Rental Ontrack pvt ldt. 
+          <div class="pt-4 pb-2">
+            <div class="text-subtitle text--secondary">
+             A FrontEnd focused Web developer building the Frontend of  Websites and Web Applications that leads to the success of the overall product.
             </div>
           </div>
-          <v-btn depressed dark rounded color="light-blue darken-3 mt-5">
+          <v-btn dark large rounded color="light-blue darken-3 mt-5">
             Connect With Me
           </v-btn>
         </v-col>
@@ -37,8 +37,8 @@
         </v-col>
         <v-col cols="12" md="6" sm="12" lg="6">
           <div class="my-auto">
-            <div class="text-h3 font-weight-bold text-justify">Get in touch today to schedule your call</div>
-            <div class="d-flex mt-2">
+            <div class="text-h4 text-md-h3 font-weight-bold text-justify">Get in touch today to schedule your call</div>
+            <div class="d-flex pt-3 pb-4">
               <v-btn text>
                 <v-icon left size="18" color="black">mdi-email</v-icon>
                 <div class="text-caption text-lowercase">sherpamrk@gmail.com</div>
@@ -55,7 +55,7 @@
                 dense
                 v-model="name"
                 label="Name"
-                class="black--text"
+                class="black--text mb-2"
                 :rules="nameRules"
               >
               </v-text-field>
@@ -65,6 +65,7 @@
                 dense
                 v-model="email"
                 label="E-mail"
+                class="black--text mb-2"
                 :rules="emailRules"
               ></v-text-field>
 
@@ -73,17 +74,19 @@
                 dense
                 name="input-7-1"
                 label="Message"
+                class="black--text"
                 v-model="message"
                 value="Your message here!!!"
                 :rules="messageRules"
               >
               </v-textarea>
-            </v-form>
+            
             <div class="mt-4">
-              <v-btn @click="submit" depressed class="text-lowercase" rounded color="black lighten-1" dark>
+              <v-btn @click="submit" :disabled="!valid" large class="text-lowercase white--text" color="black lighten-1">
                 Submit
               </v-btn>
             </div>
+          </v-form>
           </div>
           
         </v-col>
@@ -94,6 +97,7 @@
 
 <script>
 // @ is an alias to /src
+import swal from 'sweetalert';
 
 export default {
   name: 'Home',
@@ -123,7 +127,16 @@ export default {
   methods:{
     submit(){
       this.$refs.form.validate();
-      
+      if (!this.$refs.form.validate()) {
+        swal("Some Fields are Missing", "Please fill out the form", "error");
+      } else {
+        swal(
+          "Success",
+          "Your form has been Submitted",
+          "success"
+        );
+        this.$refs.form.reset();
+      }
 
       
     }

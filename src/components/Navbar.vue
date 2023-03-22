@@ -1,6 +1,6 @@
 <template>
  <nav>
-    <v-app-bar app flat dark>
+    <v-app-bar app dark elevate-on-scroll>
       <v-app-bar-nav-icon 
         class="grey--text"
         @click="drawer= !drawer">
@@ -20,18 +20,6 @@
       </v-btn>
     </div>
    
-    <!-- <div class="d-flex justify-center">
-      <v-btn text class="hidden-md-and-up">
-        <v-icon left size="20" color="green darken-1">mdi-folder</v-icon>
-        <div class="text-caption text-lowercase">kesangs99@gmail.com</div>
-      </v-btn>
-      <v-btn text class="hidden-md-and-up">
-        <v-icon left size="20" color="green darken-1">mdi-phone</v-icon>
-        <div class="text-caption text-lowercase">+91 7477308037</div>
-      </v-btn>
-    </div> -->
-  
-  
     </v-app-bar>
 
     <v-navigation-drawer v-model="drawer" app class="grey lighten-2">

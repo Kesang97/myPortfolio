@@ -5,6 +5,7 @@ import VueSweetalert2 from 'vue-sweetalert2';
 import router from './router'
 
 Vue.config.productionTip = false
+
 Vue.use(VueSweetalert2);
 
 new Vue({
