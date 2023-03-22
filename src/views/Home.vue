@@ -49,35 +49,43 @@
               </v-btn>
             </div>
 
-              <form>
+            <v-form ref="form" v-model="valid" lazy-validation>
               <v-text-field
+                outlined
+                dense
                 v-model="name"
                 label="Name"
                 class="black--text"
-                required
+                :rules="nameRules"
               >
               </v-text-field>
         
               <v-text-field
+                outlined
+                dense
                 v-model="email"
                 label="E-mail"
-                required
+                :rules="emailRules"
               ></v-text-field>
 
               <v-textarea
+                outlined
+                dense
                 name="input-7-1"
                 label="Message"
                 v-model="message"
                 value="Your message here!!!"
+                :rules="messageRules"
               >
               </v-textarea>
-            
-            <v-btn @click="submit" depressed class="text-lowercase" rounded color="black lighten-1" dark>
-              Submit
-            </v-btn>
-            </form>
-            
+            </v-form>
+            <div class="mt-4">
+              <v-btn @click="submit" depressed class="text-lowercase" rounded color="black lighten-1" dark>
+                Submit
+              </v-btn>
+            </div>
           </div>
+          
         </v-col>
       </v-row>
     </v-container>
@@ -93,14 +101,31 @@ export default {
   data(){
     return{
       name: '',
-      phoneNumber: '',
       email: '',
-      message: ''
+      message: '',
+      valid: true,
+
+      nameRules: [
+        (v) => !!v || 'Name is required',
+        (v) => (v).length <=15 && (v).length >=3 || 'Name must be less than 15 characters'
+      ],
+      emailRules: [
+        (v) => !!v || 'Email is required',
+        (v) => /.+@.+\..+/.test(v) || 'Email must be valid'
+      ],
+      messageRules:[
+        (v) => !!v || 'Message is required',
+       
+      ]
+
     }
   },
   methods:{
     submit(){
-      console.log("Form is submitted successfully")
+      this.$refs.form.validate();
+      
+
+      
     }
   }
 };
