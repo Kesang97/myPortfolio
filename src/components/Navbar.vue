@@ -30,7 +30,7 @@
               <v-icon left size="25" color="deep-orange">{{ item.icon }}</v-icon>
             </v-list-item-actions>
             <v-list-item-content>
-              <v-list-item-title class="white--text">{{ item.title }}</v-list-item-title>
+              <v-list-item-title class="orange--text">{{ item.title }}</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
         </v-list-item-group>
