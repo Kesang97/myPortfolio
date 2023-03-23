@@ -1,28 +1,33 @@
 <template>
  <nav>
     <v-app-bar app dark elevate-on-scroll>
-      <v-app-bar-nav-icon 
+      <!-- <v-app-bar-nav-icon 
         class="grey--text"
         @click="drawer= !drawer">
-      </v-app-bar-nav-icon>
-      <v-toolbar-title class="grey--text">
-          <span class="text-h6">Portfolio</span>
-      </v-toolbar-title>
-     <v-spacer></v-spacer>
-    <div class="d-flex justify-space-between ">
-      <v-btn text class="hidden-md-and-down">
-        <v-icon left size="20" color="green darken-1">mdi-folder</v-icon>
-        <div class="text-caption text-lowercase">kesangs99@gmail.com</div>
-      </v-btn>
-      <v-btn text class="hidden-md-and-down">
-        <v-icon left size="20" color="green darken-1">mdi-phone</v-icon>
-        <div class="text-caption text-lowercase">+91 7477308037</div>
-      </v-btn>
-    </div>
-   
+      </v-app-bar-nav-icon> -->
+    <v-container class="d-flex ma-0 pa-0 mx-md-auto px-md-auto">
+      <div class="my-auto hidden-md-and-up">
+        <v-icon size="30" class="mr-2" @click.stop="drawer= !drawer">mdi-menu</v-icon>
+      </div>
+    
+    <div class="my-auto">
+      <div class="text-h6 grey--text font-weight-bold">Portfolio</div>
+    </div>  
+    <v-spacer></v-spacer>
+
+    <v-btn to="/" class="my-auto hidden-md-and-down ml-4" text>
+      Home
+    </v-btn>
+    <v-btn to="/about" class="my-auto hidden-md-and-down ml-4" text>
+      About
+    </v-btn>
+    
+
+    </v-container>
+
     </v-app-bar>
 
-    <v-navigation-drawer v-model="drawer" app class="grey lighten-2">
+    <v-navigation-drawer v-model="drawer" absolute temporary class="grey lighten-2">
       <v-list>
         <v-list-item-group v-model="selectItem">
           <v-list-item v-for="(item, i) in assets" :key="i" @click="$router.push(item.route)">
